@@ -1,67 +1,108 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
-import { Cloud, AlertTriangle } from 'lucide-react';
+import { BarChart3, TrendingDown, Leaf, History, ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Analytics = ({ totalEmissions, deliveryHistory = [] }) => {
-  const chartData = deliveryHistory.length > 0 
-    ? deliveryHistory.map((d, i) => ({ trip: `Trip ${i+1}`, emissions: d.co2 }))
-    : [{ trip: 'No trips', emissions: 0 }];
-
-  const sortedByPollution = [...deliveryHistory].sort((a, b) => b.co2 - a.co2).slice(0, 3);
-
   return (
-    <div className="space-y-8">
-      <div>
-        <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-          <Cloud className="text-blue-500" /> Total Impact
-        </h3>
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl border border-blue-200">
-          <p className="text-sm text-blue-800 font-semibold mb-1 uppercase tracking-wide">Session CO₂ Emissions</p>
-          <div className="flex items-end gap-2">
-            <span className="text-5xl font-black text-blue-900">{totalEmissions.toFixed(1)}</span>
-            <span className="text-xl font-bold text-blue-700 mb-1">kg</span>
+    <div className="space-y-8 h-full flex flex-col">
+      <div className="shrink-0">
+        <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-gray-400 mb-6">Real-Time Impact</h3>
+        
+        <motion.div 
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="p-8 rounded-[2rem] bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-2xl shadow-emerald-200 relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 p-6 opacity-20 transform translate-x-4 -translate-y-4">
+             <Leaf className="w-32 h-32 rotate-12" />
           </div>
+          
+          <div className="relative z-10">
+            <div className="flex items-center gap-2 mb-2 opacity-80">
+              <TrendingDown className="w-4 h-4" />
+              <span className="text-xs font-bold uppercase tracking-widest">Total CO₂ Saved</span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <motion.span 
+                key={totalEmissions}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="text-5xl font-black"
+              >
+                {totalEmissions.toFixed(1)}
+              </motion.span>
+              <span className="text-xl font-bold opacity-60">kg</span>
+            </div>
+            
+            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+               <div className="flex flex-col">
+                  <span className="text-[10px] font-bold uppercase tracking-widest opacity-60">Eco Rank</span>
+                  <span className="text-sm font-black mt-1">Forest Guardian</span>
+               </div>
+               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
+                  <ArrowUpRight className="w-5 h-5" />
+               </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="flex-1 flex flex-col min-h-0">
+        <div className="flex items-center justify-between mb-4 shrink-0">
+          <h3 className="text-[10px] font-black uppercase tracking-[0.25em] text-gray-400">Emission History</h3>
+          <History className="w-4 h-4 text-gray-300" />
+        </div>
+        
+        <div className="flex-1 overflow-y-auto pr-2 space-y-4">
+          <AnimatePresence>
+            {deliveryHistory.length > 0 ? (
+              deliveryHistory.slice().reverse().map((item, idx) => (
+                <motion.div 
+                  initial={{ x: 20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: idx * 0.1 }}
+                  key={idx}
+                  className="p-5 glass-card rounded-2xl border border-white/40 flex items-center justify-between group"
+                >
+                  <div className="flex flex-col gap-1 max-w-[180px]">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/50" />
+                      <span className="text-xs font-black text-gray-800 truncate">{item.to || 'Unknown'}</span>
+                    </div>
+                    <span className="text-[10px] text-gray-400 font-bold ml-3.5 truncate">From: {item.from || 'Origin'}</span>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-emerald-600 font-black text-sm">-{item.co2}kg</span>
+                    <span className="text-[8px] font-black uppercase tracking-tighter text-gray-300 group-hover:text-emerald-400 transition-colors">Clean Run</span>
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              <div className="h-full flex flex-col items-center justify-center text-center py-10 opacity-40">
+                <BarChart3 className="w-10 h-10 mb-4 text-gray-300" />
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">No Historical Data</p>
+              </div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
-      <div>
-        <h3 className="text-lg font-bold text-gray-800 mb-4">Emissions Per Trip</h3>
-        <div className="h-48 w-full bg-white rounded-xl border border-gray-100 p-2">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E7EB" />
-              <XAxis dataKey="trip" axisLine={false} tickLine={false} tick={{fill: '#6B7280', fontSize: 12}} dy={10} />
-              <YAxis axisLine={false} tickLine={false} tick={{fill: '#6B7280', fontSize: 12}} />
-              <Tooltip 
-                cursor={{fill: '#F3F4F6'}} 
-                contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'}} 
-              />
-              <Bar dataKey="emissions" fill="#10B981" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      <div>
-        <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 mb-4">
-          <AlertTriangle className="text-red-500 w-5 h-5" /> Highest Emission Trips
-        </h3>
-        <div className="space-y-3">
-          {sortedByPollution.length > 0 ? sortedByPollution.map((route, idx) => (
-             <div key={idx} className="flex justify-between items-center p-3 bg-red-50 border border-red-100 rounded-xl">
-               <div className="text-sm">
-                  <p className="font-semibold text-gray-800">{route.from}</p>
-                  <p className="text-xs text-red-600 font-medium">&rarr; {route.to}</p>
-               </div>
-               <div className="font-bold text-red-700">
-                  {route.co2.toFixed(1)} <span className="text-xs">kg</span>
-               </div>
-             </div>
-          )) : (
-             <div className="text-sm text-gray-500 text-center py-4 border border-dashed rounded-xl">
-               No trips completed in this session yet.
-             </div>
-          )}
+      <div className="mt-auto pt-6 shrink-0">
+        <div className="p-4 bg-gray-900 rounded-2xl flex items-center gap-4 border border-white/5 shadow-2xl">
+           <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
+              <Leaf className="w-6 h-6 text-orange-500" />
+           </div>
+           <div>
+              <p className="text-white text-xs font-black">Daily Goal</p>
+              <div className="w-40 h-1.5 bg-white/5 rounded-full mt-1.5 overflow-hidden">
+                 <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: '65%' }}
+                    className="h-full bg-orange-500" 
+                 />
+              </div>
+           </div>
+           <span className="ml-auto text-white font-black text-xs">65%</span>
         </div>
       </div>
     </div>
