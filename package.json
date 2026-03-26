@@ -4,7 +4,7 @@
   "description": "Ecologix Dashboard Deployment for Render",
   "main": "backend/server.js",
   "scripts": {
-    "postinstall": "npm install --prefix backend && npm install --prefix route-app && npm run build --prefix route-app",
+    "build": "npm install --prefix backend && npm install --prefix route-app && npm run build --prefix route-app",
     "start": "node backend/server.js"
   },
   "engines": {
