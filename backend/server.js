@@ -9,8 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve static frontend files from the root directory
-app.use(express.static(path.join(__dirname, '../')));
+// Serve static frontend files from the compiled React app
+const distPath = path.join(__dirname, '../route-app/dist');
+app.use(express.static(distPath));
 
 // In-memory store for OTPs (In production, use Redis or a database)
 const activeOtps = new Map();
@@ -89,7 +90,16 @@ app.post('/api/verify-otp', (req, res) => {
     }
 });
 
-const PORT = 5000;
+// Catch-all route for SPA (React Router)
+app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api/')) {
+        res.sendFile(path.join(distPath, 'index.html'));
+    } else {
+        next();
+    }
+});
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`✅ Ecologix Secure Backend running on port ${PORT}`);
 });
