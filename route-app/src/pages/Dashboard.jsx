@@ -8,22 +8,32 @@ const fetchRealRoute = async (pickupName, deliveryName) => {
   try {
     const pickupRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(pickupName)}&format=json&limit=1`);
     const pickupData = await pickupRes.json();
-    if (!pickupData || pickupData.length === 0) throw new Error("Pickup location not found");
+    if (!pickupData || pickupData.length === 0) {
+      alert(`Pickup location "${pickupName}" was not found by the map service.`);
+      return null;
+    }
     const pLon = pickupData[0].lon;
     const pLat = pickupData[0].lat;
 
     const deliveryRes = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(deliveryName)}&format=json&limit=1`);
     const deliveryData = await deliveryRes.json();
-    if (!deliveryData || deliveryData.length === 0) throw new Error("Delivery location not found");
+    if (!deliveryData || deliveryData.length === 0) {
+      alert(`Delivery location "${deliveryName}" was not found by the map service.`);
+      return null;
+    }
     const dLon = deliveryData[0].lon;
     const dLat = deliveryData[0].lat;
 
     const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${pLon},${pLat};${dLon},${dLat}?overview=full&geometries=geojson&alternatives=true`;
+    console.log("Fetching OSRM Route:", osrmUrl);
+    
     const osrmRes = await fetch(osrmUrl);
     const osrmData = await osrmRes.json();
 
     if (osrmData.code !== "Ok" || !osrmData.routes || osrmData.routes.length === 0) {
-      throw new Error("Route not found");
+      console.error("OSRM Error Data:", osrmData);
+      alert("The routing service could not find a road path between these two points. They might be separated by an ocean or are inaccessible by car.");
+      return null;
     }
 
     const routeBase = osrmData.routes[0];
@@ -95,7 +105,6 @@ function Dashboard() {
     let newRoutes = await fetchRealRoute(pickup, delivery);
     
     if (!newRoutes) {
-      alert("Could not find real-time route. Please check the addresses and try again.");
       setIsLoading(false);
       return;
     }
