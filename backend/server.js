@@ -3,9 +3,14 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 
+const path = require('path');
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Serve static frontend files from the root directory
+app.use(express.static(path.join(__dirname, '../')));
 
 // In-memory store for OTPs (In production, use Redis or a database)
 const activeOtps = new Map();
