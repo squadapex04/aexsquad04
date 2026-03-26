@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologix - Eco-Friendly Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+            <span class="logo-text">ecologix</span>
+        </div>
+
+        <div class="nav-controls">
+            <!-- Home with Dropdown -->
+            <div class="home-container">
+                <button id="home-btn" class="nav-btn home-btn"><i class="fa-solid fa-house"></i> Home</button>
+                <nav id="dropdown-nav" class="dropdown-nav hidden">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-bullseye"></i> Our Mission</a></li>
+                        <li><a href="#"><i class="fa-solid fa-seedling"></i> Projects</a></li>
+                        <li><a href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="auth-buttons">
+                <button class="login-btn" onclick="window.parent.location.href='/auth?mode=login'">Log In</button>
+                <button class="signup-btn" onclick="window.parent.location.href='/auth?mode=signup'">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="slogan-container">
+            <h1>Riding into a greener future</h1>
+            <p>Join our mission to plant more trees and embrace sustainable transport.</p>
+        </div>
+
+        <!-- City Theme Background (Buildings & Roads) -->
+        <div class="city-background">
+            <div class="distant-roads">
+                <svg viewBox="0 0 1000 300" preserveAspectRatio="none" width="100%" height="100%">
+                    <path d="M -50,150 Q 250,50 500,180 T 1050,120" stroke="#78909C" stroke-width="15" fill="none" opacity="0.2" />
+                    <path d="M -50,220 Q 350,280 650,120 T 1050,160" stroke="#546E7A" stroke-width="10" fill="none" opacity="0.15" />
+                </svg>
+            </div>
+
+            <div class="city-layer layer-far">
+                <div class="build fb1"></div>
+                <div class="build fb2"></div>
+                <div class="build fb3"></div>
+                <div class="build fb4"></div>
+                <div class="build fb5"></div>
+                <div class="build fb6"></div>
+                <div class="build fb7"></div>
+                <div class="build fb8"></div>
+                <div class="build fb9"></div>
+                <div class=\"build fb10\"></div>
+                <div class="build fb11"></div>
+                <div class="build fb12"></div>
+            </div>
+
+            <div class="city-layer layer-near">
+                <div class="build nb1"></div>
+                <div class="build nb2"></div>
+                <div class="build nb3"></div>
+                <div class="build nb4"></div>
+                <div class="build nb5"></div>
+                <div class="build nb6"></div>
+                <div class="build nb7"></div>
+                <div class="build nb8"></div>
+            </div>
+        </div>
+
+        <!-- Trees on left and right -->
+        <div class="tree-container left-tree">
+            <svg viewBox="0 0 200 250" class="tree-svg">
+                <defs>
+                    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#3E2723" />
+                        <stop offset="50%" stop-color="#5D4037" />
+                        <stop offset="100%" stop-color="#4E342E" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M 85 250 Q 95 180 90 120 Q 85 90 75 60 L 85 65 Q 90 100 100 120 L 100 90 L 105 92 L 105 130 Q 115 180 125 250 Z"
+                    fill="url(#trunkGrad)" />
+                <path d="M 90 120 Q 60 100 30 90 L 35 85 Q 70 100 95 130 Z" fill="#4E342E" />
+                <path d="M 85 90 Q 50 70 20 60 L 25 55 Q 60 75 88 95 Z" fill="#4E342E" />
+                <path d="M 105 130 Q 140 110 170 95 L 165 88 Q 130 110 105 115 Z" fill="#4E342E" />
+                <path d="M 100 90 Q 130 70 160 55 L 155 50 Q 120 75 102 95 Z" fill="#4E342E" />
+                <path d="M 98 60 Q 110 40 130 20 L 125 15 Q 100 40 95 65 Z" fill="#4E342E" />
+                <g opacity="0.95">
+                    <ellipse cx="60" cy="85" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="140" cy="90" rx="45" ry="30" fill="#1B5E20" />
+                    <ellipse cx="40" cy="55" rx="35" ry="20" fill="#1B5E20" />
+                    <ellipse cx="130" cy="50" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="90" cy="50" rx="50" ry="35" fill="#1B5E20" />
+                    <ellipse cx="100" cy="25" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="100" cy="115" rx="50" ry="25" fill="#1B5E20" />
+                </g>
+                <g opacity="0.9">
+                    <ellipse cx="55" cy="80" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="145" cy="80" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="45" cy="50" rx="25" ry="15" fill="#2E7D32" />
+                    <ellipse cx="125" cy="40" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="85" cy="40" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="105" cy="20" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="100" cy="105" rx="35" ry="15" fill="#2E7D32" />
+                </g>
+                <g opacity="0.8">
+                    <ellipse cx="50" cy="75" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="150" cy="70" rx="20" ry="10" fill="#4CAF50" />
+                    <ellipse cx="80" cy="30" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="110" cy="15" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="100" cy="95" rx="20" ry="8" fill="#4CAF50" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="tree-container right-tree">
+            <svg viewBox="0 0 200 250" class="tree-svg">
+                <defs>
+                    <linearGradient id="trunkGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#3E2723" />
+                        <stop offset="50%" stop-color="#5D4037" />
+                        <stop offset="100%" stop-color="#4E342E" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M 85 250 Q 95 180 90 120 Q 85 90 75 60 L 85 65 Q 90 100 100 120 L 100 90 L 105 92 L 105 130 Q 115 180 125 250 Z"
+                    fill="url(#trunkGrad2)" />
+                <path d="M 90 120 Q 60 100 30 90 L 35 85 Q 70 100 95 130 Z" fill="#4E342E" />
+                <path d="M 85 90 Q 50 70 20 60 L 25 55 Q 60 75 88 95 Z" fill="#4E342E" />
+                <path d="M 105 130 Q 140 110 170 95 L 165 88 Q 130 110 105 115 Z" fill="#4E342E" />
+                <path d="M 100 90 Q 130 70 160 55 L 155 50 Q 120 75 102 95 Z" fill="#4E342E" />
+                <path d="M 98 60 Q 110 40 130 20 L 125 15 Q 100 40 95 65 Z" fill="#4E342E" />
+                <g opacity="0.95">
+                    <ellipse cx="60" cy="85" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="140" cy="90" rx="45" ry="30" fill="#1B5E20" />
+                    <ellipse cx="40" cy="55" rx="35" ry="20" fill="#1B5E20" />
+                    <ellipse cx="130" cy="50" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="90" cy="50" rx="50" ry="35" fill="#1B5E20" />
+                    <ellipse cx="100" cy="25" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="100" cy="115" rx="50" ry="25" fill="#1B5E20" />
+                </g>
+                <g opacity="0.9">
+                    <ellipse cx="55" cy="80" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="145" cy="80" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="45" cy="50" rx="25" ry="15" fill="#2E7D32" />
+                    <ellipse cx="125" cy="40" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="85" cy="40" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="105" cy="20" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="100" cy="105" rx="35" ry="15" fill="#2E7D32" />
+                </g>
+                <g opacity="0.8">
+                    <ellipse cx="50" cy="75" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="150" cy="70" rx="20" ry="10" fill="#4CAF50" />
+                    <ellipse cx="80" cy="30" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="110" cy="15" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="100" cy="95" rx="20" ry="8" fill="#4CAF50" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- The ground or path -->
+        <div class="path"></div>
+
+        <div class="motorcycle-container">
+            <svg viewBox="0 0 250 180" class="motorcycle-svg">
+                <!-- Frame & Mechanicals -->
+                <path d="M 110 130 L 30 130 L 25 125 L 80 125 Z" fill="#9E9E9E" /> <!-- Exhaust -->
+                <line x1="50" y1="140" x2="90" y2="100" stroke="#424242" stroke-width="6" stroke-linecap="round" />
+                <!-- Swingarm -->
+                <line x1="90" y1="100" x2="150" y2="85" stroke="#424242" stroke-width="8" stroke-linecap="round" />
+                <!-- Main frame spine -->
+                <line x1="145" y1="75" x2="190" y2="140" stroke="#E0E0E0" stroke-width="6" stroke-linecap="round" />
+                <!-- Front forks -->
+
+                <!-- Engine -->
+                <rect x="95" y="95" width="40" height="35" rx="5" fill="#616161" /> <!-- Engine main -->
+                <circle cx="115" cy="115" r="15" fill="#424242" /> <!-- Clutch/crank cover -->
+                <!-- Cooling fins on engine -->
+                <line x1="90" y1="100" x2="135" y2="100" stroke="#9E9E9E" stroke-width="2" />
+                <line x1="90" y1="105" x2="135" y2="105" stroke="#9E9E9E" stroke-width="2" />
+                <line x1="90" y1="110" x2="135" y2="110" stroke="#9E9E9E" stroke-width="2" />
+
+                <!-- Bodywork: Gas Tank & Seat -->
+                <!-- Tank -->
+                <path d="M 95 95 Q 110 70 145 80 Q 155 85 150 90 L 95 90 Z" fill="#D32F2F" />
+                <!-- Seat -->
+                <path d="M 60 95 Q 75 90 95 95 L 95 100 L 60 100 Z" fill="#212121" />
+                <!-- Front fairing/headlight -->
+                <path d="M 145 75 L 160 80 L 155 90 L 140 85 Z" fill="#D32F2F" />
+                <circle cx="160" cy="80" r="5" fill="#FFF59D" /> <!-- Light -->
+
+                <!-- Handlebars -->
+                <path d="M 145 75 Q 140 65 152 65" stroke="#212121" stroke-width="4" fill="none"
+                    stroke-linecap="round" />
+
+                <!-- Wheels -->
+                <g class="wheel-moto-back">
+                    <circle cx="50" cy="140" r="22" stroke="#212121" stroke-width="10" fill="#E0E0E0" />
+                    <circle cx="50" cy="140" r="15" fill="transparent" stroke="#BDBDBD" stroke-width="2" />
+                    <circle cx="50" cy="140" r="5" fill="#424242" />
+                    <!-- Mag wheel spokes -->
+                    <path d="M 50 120 L 53 140 L 47 140 Z" fill="#9E9E9E" />
+                    <path d="M 50 160 L 53 140 L 47 140 Z" fill="#9E9E9E" />
+                    <path d="M 30 140 L 50 137 L 50 143 Z" fill="#9E9E9E" />
+                    <path d="M 70 140 L 50 137 L 50 143 Z" fill="#9E9E9E" />
+                    <path d="M 35 155 L 48 142 L 52 138 Z" fill="#9E9E9E" />
+                    <path d="M 65 125 L 52 138 L 48 142 Z" fill="#9E9E9E" />
+                </g>
+                <g class="wheel-moto-front">
+                    <circle cx="190" cy="140" r="22" stroke="#212121" stroke-width="10" fill="#E0E0E0" />
+                    <circle cx="190" cy="140" r="15" fill="transparent" stroke="#BDBDBD" stroke-width="2" />
+                    <circle cx="190" cy="140" r="5" fill="#424242" />
+                    <path d="M 190 120 L 193 140 L 187 140 Z" fill="#9E9E9E" />
+                    <path d="M 190 160 L 193 140 L 187 140 Z" fill="#9E9E9E" />
+                    <path d="M 170 140 L 190 137 L 190 143 Z" fill="#9E9E9E" />
+                    <path d="M 210 140 L 190 137 L 190 143 Z" fill="#9E9E9E" />
+                    <path d="M 175 155 L 188 142 L 192 138 Z" fill="#9E9E9E" />
+                    <path d="M 205 125 L 192 138 L 188 142 Z" fill="#9E9E9E" />
+                </g>
+
+                <!-- Highly Realistic Detailed Rider -->
+                <g class="rider">
+                    <!-- Far Arm -->
+                    <path d="M 100 45 Q 120 50 148 62" stroke="#424242" stroke-width="8" stroke-linecap="round"
+                        fill="none" />
+
+                    <!-- Leg & Boot details -->
+                    <path d="M 80 92 Q 95 105 108 112" stroke="#1565C0" stroke-width="15" stroke-linecap="round"
+                        fill="none" /> <!-- Thigh -->
+                    <path d="M 108 112 L 97 135" stroke="#1565C0" stroke-width="11" stroke-linecap="round"
+                        fill="none" /> <!-- Calf -->
+                    <!-- Leather Boot -->
+                    <path d="M 90 132 L 105 132 Q 108 135 108 138 L 90 138 Z" fill="#1C1C1C" />
+                    <path d="M 90 138 L 94 141 L 108 141 L 108 138 Z" fill="#424242" />
+
+                    <!-- Torso (Leather Jacket) -->
+                    <path d="M 70 94 Q 72 65 100 42 L 115 52 Q 105 85 95 98 Z" fill="#212121" />
+                    <!-- Zipper/crease details -->
+                    <path d="M 100 42 Q 108 70 95 98" stroke="#333" stroke-width="2" fill="none" />
+                    <path d="M 75 70 Q 85 80 95 90" stroke="#111" stroke-width="2" fill="none" />
+                    <path d="M 100 42 L 105 35 L 112 40 L 115 52 Z" fill="#1C1C1C" />
+
+                    <!-- Near Arm -->
+                    <path d="M 105 45 Q 130 55 150 64" stroke="#212121" stroke-width="10" stroke-linecap="round"
+                        fill="none" />
+                    <!-- Elbow fold -->
+                    <path d="M 120 50 Q 135 60 148 64" stroke="#111" stroke-width="2" fill="none" />
+
+                    <!-- Leather Glove -->
+                    <path d="M 145 58 Q 155 58 156 65 Q 155 70 145 68 Z" fill="#3E2723" />
+
+                    <!-- Human Face & Neck -->
+                    <!-- Neck -->
+                    <path d="M 100 40 L 110 40 L 105 30 L 98 32 Z" fill="#FFCCBC" />
+                    <!-- Face profile (jaw, nose, eye) -->
+                    <path d="M 105 32 Q 115 40 120 35 L 122 30 L 120 28 L 122 25 Q 120 20 115 15 L 105 15 Z"
+                        fill="#FFCCBC" />
+                    <!-- Eye & Brow -->
+                    <circle cx="116" cy="22" r="1.5" fill="#3E2723" />
+                    <path d="M 114 19 Q 117 18 119 20" stroke="#3E2723" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" />
+                    <!-- Mouth -->
+                    <path d="M 118 32 C 120 32, 121 32, 122 31" stroke="#D84315" stroke-width="1" fill="none"
+                        stroke-linecap="round" />
+                    <!-- Hair -->
+                    <path d="M 105 15 Q 115 15 115 18 L 108 20 Z" fill="#3E2723" />
+
+                    <!-- Open-face Helmet -->
+                    <path
+                        d="M 108 34 Q 95 32 95 18 Q 95 8 108 8 Q 122 8 122 15 L 115 15 Q 110 10 102 12 Q 95 20 102 30 L 108 34 Z"
+                        fill="#D32F2F" />
+                    <!-- Helmet Stripe -->
+                    <path d="M 97 18 Q 97 10 108 8" stroke="#FFF" stroke-width="2" fill="none" />
+
+                    <!-- Blowing Scarf -->
+                    <path d="M 104 38 Q 80 45 40 35 Q 50 45 80 48 Q 90 45 104 40 Z" fill="#D32F2F" />
+                </g>
+            </svg>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

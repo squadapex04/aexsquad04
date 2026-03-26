@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 6a98862 (Integrated Animated Landing Page, Real-Time Map Analytics, and completely Custom Node.js Email Authentication Backend)
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologix - Eco-Friendly Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-leaf"></i></span>
+            <span class="logo-text">ecologix</span>
+        </div>
+
+        <div class="nav-controls">
+            <!-- Home with Dropdown -->
+            <div class="home-container">
+                <button id="home-btn" class="nav-btn home-btn"><i class="fa-solid fa-house"></i> Home</button>
+                <nav id="dropdown-nav" class="dropdown-nav hidden">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-bullseye"></i> Our Mission</a></li>
+                        <li><a href="#"><i class="fa-solid fa-seedling"></i> Projects</a></li>
+                        <li><a href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="auth-buttons">
+                <button class="login-btn" onclick="window.location.href='http://localhost:5173/'">Log In</button>
+                <button class="signup-btn" onclick="window.location.href='http://localhost:5173/'">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="slogan-container">
+            <h1>Riding into a greener future</h1>
+            <p>Join our mission to plant more trees and embrace sustainable transport.</p>
+        </div>
+
+        <!-- City Theme Background (Buildings & Roads) -->
+        <div class="city-background">
+            <div class="distant-roads">
+                <svg viewBox="0 0 1000 300" preserveAspectRatio="none" width="100%" height="100%">
+                    <path d="M -50,150 Q 250,50 500,180 T 1050,120" stroke="#78909C" stroke-width="15" fill="none" opacity="0.2" />
+                    <path d="M -50,220 Q 350,280 650,120 T 1050,160" stroke="#546E7A" stroke-width="10" fill="none" opacity="0.15" />
+                </svg>
+            </div>
+
+            <div class="city-layer layer-far">
+                <div class="build fb1"></div>
+                <div class="build fb2"></div>
+                <div class="build fb3"></div>
+                <div class="build fb4"></div>
+                <div class="build fb5"></div>
+                <div class="build fb6"></div>
+                <div class="build fb7"></div>
+                <div class="build fb8"></div>
+                <div class="build fb9"></div>
+                <div class=\"build fb10\"></div>
+                <div class="build fb11"></div>
+                <div class="build fb12"></div>
+            </div>
+
+            <div class="city-layer layer-near">
+                <div class="build nb1"></div>
+                <div class="build nb2"></div>
+                <div class="build nb3"></div>
+                <div class="build nb4"></div>
+                <div class="build nb5"></div>
+                <div class="build nb6"></div>
+                <div class="build nb7"></div>
+                <div class="build nb8"></div>
+            </div>
+        </div>
+
+        <!-- Trees on left and right -->
+        <div class="tree-container left-tree">
+            <svg viewBox="0 0 200 250" class="tree-svg">
+                <defs>
+                    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#3E2723" />
+                        <stop offset="50%" stop-color="#5D4037" />
+                        <stop offset="100%" stop-color="#4E342E" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M 85 250 Q 95 180 90 120 Q 85 90 75 60 L 85 65 Q 90 100 100 120 L 100 90 L 105 92 L 105 130 Q 115 180 125 250 Z"
+                    fill="url(#trunkGrad)" />
+                <path d="M 90 120 Q 60 100 30 90 L 35 85 Q 70 100 95 130 Z" fill="#4E342E" />
+                <path d="M 85 90 Q 50 70 20 60 L 25 55 Q 60 75 88 95 Z" fill="#4E342E" />
+                <path d="M 105 130 Q 140 110 170 95 L 165 88 Q 130 110 105 115 Z" fill="#4E342E" />
+                <path d="M 100 90 Q 130 70 160 55 L 155 50 Q 120 75 102 95 Z" fill="#4E342E" />
+                <path d="M 98 60 Q 110 40 130 20 L 125 15 Q 100 40 95 65 Z" fill="#4E342E" />
+                <g opacity="0.95">
+                    <ellipse cx="60" cy="85" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="140" cy="90" rx="45" ry="30" fill="#1B5E20" />
+                    <ellipse cx="40" cy="55" rx="35" ry="20" fill="#1B5E20" />
+                    <ellipse cx="130" cy="50" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="90" cy="50" rx="50" ry="35" fill="#1B5E20" />
+                    <ellipse cx="100" cy="25" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="100" cy="115" rx="50" ry="25" fill="#1B5E20" />
+                </g>
+                <g opacity="0.9">
+                    <ellipse cx="55" cy="80" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="145" cy="80" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="45" cy="50" rx="25" ry="15" fill="#2E7D32" />
+                    <ellipse cx="125" cy="40" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="85" cy="40" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="105" cy="20" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="100" cy="105" rx="35" ry="15" fill="#2E7D32" />
+                </g>
+                <g opacity="0.8">
+                    <ellipse cx="50" cy="75" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="150" cy="70" rx="20" ry="10" fill="#4CAF50" />
+                    <ellipse cx="80" cy="30" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="110" cy="15" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="100" cy="95" rx="20" ry="8" fill="#4CAF50" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="tree-container right-tree">
+            <svg viewBox="0 0 200 250" class="tree-svg">
+                <defs>
+                    <linearGradient id="trunkGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#3E2723" />
+                        <stop offset="50%" stop-color="#5D4037" />
+                        <stop offset="100%" stop-color="#4E342E" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M 85 250 Q 95 180 90 120 Q 85 90 75 60 L 85 65 Q 90 100 100 120 L 100 90 L 105 92 L 105 130 Q 115 180 125 250 Z"
+                    fill="url(#trunkGrad2)" />
+                <path d="M 90 120 Q 60 100 30 90 L 35 85 Q 70 100 95 130 Z" fill="#4E342E" />
+                <path d="M 85 90 Q 50 70 20 60 L 25 55 Q 60 75 88 95 Z" fill="#4E342E" />
+                <path d="M 105 130 Q 140 110 170 95 L 165 88 Q 130 110 105 115 Z" fill="#4E342E" />
+                <path d="M 100 90 Q 130 70 160 55 L 155 50 Q 120 75 102 95 Z" fill="#4E342E" />
+                <path d="M 98 60 Q 110 40 130 20 L 125 15 Q 100 40 95 65 Z" fill="#4E342E" />
+                <g opacity="0.95">
+                    <ellipse cx="60" cy="85" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="140" cy="90" rx="45" ry="30" fill="#1B5E20" />
+                    <ellipse cx="40" cy="55" rx="35" ry="20" fill="#1B5E20" />
+                    <ellipse cx="130" cy="50" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="90" cy="50" rx="50" ry="35" fill="#1B5E20" />
+                    <ellipse cx="100" cy="25" rx="40" ry="25" fill="#1B5E20" />
+                    <ellipse cx="100" cy="115" rx="50" ry="25" fill="#1B5E20" />
+                </g>
+                <g opacity="0.9">
+                    <ellipse cx="55" cy="80" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="145" cy="80" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="45" cy="50" rx="25" ry="15" fill="#2E7D32" />
+                    <ellipse cx="125" cy="40" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="85" cy="40" rx="35" ry="20" fill="#2E7D32" />
+                    <ellipse cx="105" cy="20" rx="30" ry="15" fill="#2E7D32" />
+                    <ellipse cx="100" cy="105" rx="35" ry="15" fill="#2E7D32" />
+                </g>
+                <g opacity="0.8">
+                    <ellipse cx="50" cy="75" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="150" cy="70" rx="20" ry="10" fill="#4CAF50" />
+                    <ellipse cx="80" cy="30" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="110" cy="15" rx="15" ry="8" fill="#4CAF50" />
+                    <ellipse cx="100" cy="95" rx="20" ry="8" fill="#4CAF50" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- The ground or path -->
+        <div class="path"></div>
+
+        <div class="motorcycle-container">
+            <svg viewBox="0 0 250 180" class="motorcycle-svg">
+                <!-- Frame & Mechanicals -->
+                <path d="M 110 130 L 30 130 L 25 125 L 80 125 Z" fill="#9E9E9E" /> <!-- Exhaust -->
+                <line x1="50" y1="140" x2="90" y2="100" stroke="#424242" stroke-width="6" stroke-linecap="round" />
+                <!-- Swingarm -->
+                <line x1="90" y1="100" x2="150" y2="85" stroke="#424242" stroke-width="8" stroke-linecap="round" />
+                <!-- Main frame spine -->
+                <line x1="145" y1="75" x2="190" y2="140" stroke="#E0E0E0" stroke-width="6" stroke-linecap="round" />
+                <!-- Front forks -->
+
+                <!-- Engine -->
+                <rect x="95" y="95" width="40" height="35" rx="5" fill="#616161" /> <!-- Engine main -->
+                <circle cx="115" cy="115" r="15" fill="#424242" /> <!-- Clutch/crank cover -->
+                <!-- Cooling fins on engine -->
+                <line x1="90" y1="100" x2="135" y2="100" stroke="#9E9E9E" stroke-width="2" />
+                <line x1="90" y1="105" x2="135" y2="105" stroke="#9E9E9E" stroke-width="2" />
+                <line x1="90" y1="110" x2="135" y2="110" stroke="#9E9E9E" stroke-width="2" />
+
+                <!-- Bodywork: Gas Tank & Seat -->
+                <!-- Tank -->
+                <path d="M 95 95 Q 110 70 145 80 Q 155 85 150 90 L 95 90 Z" fill="#D32F2F" />
+                <!-- Seat -->
+                <path d="M 60 95 Q 75 90 95 95 L 95 100 L 60 100 Z" fill="#212121" />
+                <!-- Front fairing/headlight -->
+                <path d="M 145 75 L 160 80 L 155 90 L 140 85 Z" fill="#D32F2F" />
+                <circle cx="160" cy="80" r="5" fill="#FFF59D" /> <!-- Light -->
+
+                <!-- Handlebars -->
+                <path d="M 145 75 Q 140 65 152 65" stroke="#212121" stroke-width="4" fill="none"
+                    stroke-linecap="round" />
+
+                <!-- Wheels -->
+                <g class="wheel-moto-back">
+                    <circle cx="50" cy="140" r="22" stroke="#212121" stroke-width="10" fill="#E0E0E0" />
+                    <circle cx="50" cy="140" r="15" fill="transparent" stroke="#BDBDBD" stroke-width="2" />
+                    <circle cx="50" cy="140" r="5" fill="#424242" />
+                    <!-- Mag wheel spokes -->
+                    <path d="M 50 120 L 53 140 L 47 140 Z" fill="#9E9E9E" />
+                    <path d="M 50 160 L 53 140 L 47 140 Z" fill="#9E9E9E" />
+                    <path d="M 30 140 L 50 137 L 50 143 Z" fill="#9E9E9E" />
+                    <path d="M 70 140 L 50 137 L 50 143 Z" fill="#9E9E9E" />
+                    <path d="M 35 155 L 48 142 L 52 138 Z" fill="#9E9E9E" />
+                    <path d="M 65 125 L 52 138 L 48 142 Z" fill="#9E9E9E" />
+                </g>
+                <g class="wheel-moto-front">
+                    <circle cx="190" cy="140" r="22" stroke="#212121" stroke-width="10" fill="#E0E0E0" />
+                    <circle cx="190" cy="140" r="15" fill="transparent" stroke="#BDBDBD" stroke-width="2" />
+                    <circle cx="190" cy="140" r="5" fill="#424242" />
+                    <path d="M 190 120 L 193 140 L 187 140 Z" fill="#9E9E9E" />
+                    <path d="M 190 160 L 193 140 L 187 140 Z" fill="#9E9E9E" />
+                    <path d="M 170 140 L 190 137 L 190 143 Z" fill="#9E9E9E" />
+                    <path d="M 210 140 L 190 137 L 190 143 Z" fill="#9E9E9E" />
+                    <path d="M 175 155 L 188 142 L 192 138 Z" fill="#9E9E9E" />
+                    <path d="M 205 125 L 192 138 L 188 142 Z" fill="#9E9E9E" />
+                </g>
+
+                <!-- Highly Realistic Detailed Rider -->
+                <g class="rider">
+                    <!-- Far Arm -->
+                    <path d="M 100 45 Q 120 50 148 62" stroke="#424242" stroke-width="8" stroke-linecap="round"
+                        fill="none" />
+
+                    <!-- Leg & Boot details -->
+                    <path d="M 80 92 Q 95 105 108 112" stroke="#1565C0" stroke-width="15" stroke-linecap="round"
+                        fill="none" /> <!-- Thigh -->
+                    <path d="M 108 112 L 97 135" stroke="#1565C0" stroke-width="11" stroke-linecap="round"
+                        fill="none" /> <!-- Calf -->
+                    <!-- Leather Boot -->
+                    <path d="M 90 132 L 105 132 Q 108 135 108 138 L 90 138 Z" fill="#1C1C1C" />
+                    <path d="M 90 138 L 94 141 L 108 141 L 108 138 Z" fill="#424242" />
+
+                    <!-- Torso (Leather Jacket) -->
+                    <path d="M 70 94 Q 72 65 100 42 L 115 52 Q 105 85 95 98 Z" fill="#212121" />
+                    <!-- Zipper/crease details -->
+                    <path d="M 100 42 Q 108 70 95 98" stroke="#333" stroke-width="2" fill="none" />
+                    <path d="M 75 70 Q 85 80 95 90" stroke="#111" stroke-width="2" fill="none" />
+                    <path d="M 100 42 L 105 35 L 112 40 L 115 52 Z" fill="#1C1C1C" />
+
+                    <!-- Near Arm -->
+                    <path d="M 105 45 Q 130 55 150 64" stroke="#212121" stroke-width="10" stroke-linecap="round"
+                        fill="none" />
+                    <!-- Elbow fold -->
+                    <path d="M 120 50 Q 135 60 148 64" stroke="#111" stroke-width="2" fill="none" />
+
+                    <!-- Leather Glove -->
+                    <path d="M 145 58 Q 155 58 156 65 Q 155 70 145 68 Z" fill="#3E2723" />
+
+                    <!-- Human Face & Neck -->
+                    <!-- Neck -->
+                    <path d="M 100 40 L 110 40 L 105 30 L 98 32 Z" fill="#FFCCBC" />
+                    <!-- Face profile (jaw, nose, eye) -->
+                    <path d="M 105 32 Q 115 40 120 35 L 122 30 L 120 28 L 122 25 Q 120 20 115 15 L 105 15 Z"
+                        fill="#FFCCBC" />
+                    <!-- Eye & Brow -->
+                    <circle cx="116" cy="22" r="1.5" fill="#3E2723" />
+                    <path d="M 114 19 Q 117 18 119 20" stroke="#3E2723" stroke-width="1.5" fill="none"
+                        stroke-linecap="round" />
+                    <!-- Mouth -->
+                    <path d="M 118 32 C 120 32, 121 32, 122 31" stroke="#D84315" stroke-width="1" fill="none"
+                        stroke-linecap="round" />
+                    <!-- Hair -->
+                    <path d="M 105 15 Q 115 15 115 18 L 108 20 Z" fill="#3E2723" />
+
+                    <!-- Open-face Helmet -->
+                    <path
+                        d="M 108 34 Q 95 32 95 18 Q 95 8 108 8 Q 122 8 122 15 L 115 15 Q 110 10 102 12 Q 95 20 102 30 L 108 34 Z"
+                        fill="#D32F2F" />
+                    <!-- Helmet Stripe -->
+                    <path d="M 97 18 Q 97 10 108 8" stroke="#FFF" stroke-width="2" fill="none" />
+
+                    <!-- Blowing Scarf -->
+                    <path d="M 104 38 Q 80 45 40 35 Q 50 45 80 48 Q 90 45 104 40 Z" fill="#D32F2F" />
+                </g>
+            </svg>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2d6af48 (Integrated Animated Landing Page, Real-Time Map Analytics, and completely Custom Node.js Email Authentication Backend)
+>>>>>>> 6a98862 (Integrated Animated Landing Page, Real-Time Map Analytics, and completely Custom Node.js Email Authentication Backend)
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologix Carbon Emission Calculator</title>
+    <meta name="description" content="A dynamic frontend for carbon emission calculation featuring animated nature elements.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2c15cc0cc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero-section" id="hero">
+        <nav class="mvp-navbar">
+            <div class="nav-brand">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Ecologix</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-item">Home</a>
+                <a href="#calculator" class="nav-item">Calculator</a>
+                <a href="#about" class="nav-item">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="nav-link">Log in</a>
+                <a href="#" class="nav-btn">Sign up</a>
+            </div>
+        </nav>
+        <div class="sky">
+            <div class="sun"></div>
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+        
+        <div class="logo-container">
+            <h1 class="logo">ECOLOGIX</h1>
+        </div>
+
+        <div class="landscape layer-back"></div>
+        
+        <div class="trees-layer layer-back-trees">
+            <div class="tree" style="left: 10%; --delay: 0.2s; --scale: 0.7;">
+                <div class="trunk"></div>
+                <div class="canopy">
+                    <div class="leaf-bunch lb1"></div>
+                    <div class="leaf-bunch lb2"></div>
+                    <div class="leaf-bunch lb3"></div>
+                </div>
+            </div>
+            <div class="tree" style="right: 15%; --delay: 0.6s; --scale: 0.65;">
+                <div class="trunk"></div>
+                <div class="canopy">
+                    <div class="leaf-bunch lb1"></div>
+                    <div class="leaf-bunch lb2"></div>
+                    <div class="leaf-bunch lb3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="landscape layer-mid"></div>
+
+        <div class="trees-layer layer-front-trees">
+            <div class="tree left-tree" style="left: 5%; --delay: 1.0s; --scale: 1.2;">
+                <div class="trunk front-trunk"></div>
+                <div class="canopy">
+                    <div class="leaf-bunch lb1 front-lb"></div>
+                    <div class="leaf-bunch lb2 front-lb"></div>
+                    <div class="leaf-bunch lb3 front-lb"></div>
+                    <div class="leaf-bunch lb4 front-lb"></div>
+                </div>
+            </div>
+            <div class="tree left-tree-2" style="left: 20%; --delay: 1.5s; --scale: 0.9;">
+                <div class="trunk front-trunk"></div>
+                <div class="canopy">
+                    <div class="leaf-bunch lb1 front-lb"></div>
+                    <div class="leaf-bunch lb2 front-lb"></div>
+                    <div class="leaf-bunch lb3 front-lb"></div>
+                </div>
+            </div>
+            <div class="tree right-tree" style="right: 8%; --delay: 1.2s; --scale: 1.1;">
+                <div class="trunk front-trunk"></div>
+                <div class="canopy">
+                    <div class="leaf-bunch lb1 front-lb"></div>
+                    <div class="leaf-bunch lb2 front-lb"></div>
+                    <div class="leaf-bunch lb3 front-lb"></div>
+                    <div class="leaf-bunch lb4 front-lb"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="road-system">
+            <div class="road">
+                <div class="lane-markings"></div>
+            </div>
+            
+            <div class="scooter-container">
+                <div class="rider-group">
+                    <svg viewBox="0 0 300 200" width="100%" height="100%" class="scooter-svg">
+                      <circle cx="20" cy="150" r="15" fill="#ecf0f1" class="smoke smoke-1" opacity="0" />
+                      <circle cx="10" cy="140" r="10" fill="#ecf0f1" class="smoke smoke-2" opacity="0" />
+                      <path class="scarf" d="M 110 60 Q 50 40 30 70" fill="none" stroke="#e74c3c" stroke-width="12" stroke-linecap="round"/>
+                      <g class="wheel back-wheel" >
+                         <circle cx="70" cy="150" r="30" fill="#2d3436" />
+                         <circle cx="70" cy="150" r="22" fill="#636e72" />
+                         <circle cx="70" cy="150" r="8" fill="#2d3436" />
+                         <g class="spokes back-spokes">
+                           <line x1="48" y1="150" x2="92" y2="150" stroke="#dfe6e9" stroke-width="4"/>
+                           <line x1="70" y1="128" x2="70" y2="172" stroke="#dfe6e9" stroke-width="4"/>
+                           <line x1="54" y1="134" x2="86" y2="166" stroke="#dfe6e9" stroke-width="4"/>
+                           <line x1="54" y1="166" x2="86" y2="134" stroke="#dfe6e9" stroke-width="4"/>
+                         </g>
+                      </g>
+                      <g class="wheel front-wheel">
+                         <circle cx="210" cy="150" r="30" fill="#2d3436" />
+                         <circle cx="210" cy="150" r="22" fill="#636e72" />
+                         <circle cx="210" cy="150" r="8" fill="#2d3436" />
+                         <g class="spokes front-spokes">
+                           <line x1="188" y1="150" x2="232" y2="150" stroke="#dfe6e9" stroke-width="4"/>
+                           <line x1="210" y1="128" x2="210" y2="172" stroke="#dfe6e9" stroke-width="4"/>
+                           <line x1="194" y1="134" x2="226" y2="166" stroke="#dfe6e9" stroke-width="4"/>
+                           <line x1="194" y1="166" x2="226" y2="134" stroke="#dfe6e9" stroke-width="4"/>
+                         </g>
+                      </g>
+                      <path d="M 60 150 Q 80 110 110 110 L 160 110 Q 180 80 190 70 L 210 150 Z" fill="#2ecc71" />
+                      <path d="M 80 150 L 190 150 L 180 120 L 100 120 Z" fill="#27ae60" />
+                      <path d="M 85 105 Q 105 105 115 115 L 80 115 Z" fill="#2d3436" />
+                      <path d="M 180 110 L 195 50 L 210 50 L 220 150 Z" fill="#2ecc71" />
+                      <circle cx="215" cy="55" r="10" fill="#f1c40f" />
+                      <path class="light-beam" d="M 225 55 L 350 20 L 350 150 Z" fill="#f1c40f" opacity="0.3" />
+                      <path d="M 195 50 L 175 40" fill="none" stroke="#636e72" stroke-width="8" stroke-linecap="round" />
+                      <path d="M 105 110 Q 120 150 140 140" fill="none" stroke="#2980b9" stroke-width="16" stroke-linecap="round" />
+                      <path d="M 135 140 L 155 145" fill="none" stroke="#e67e22" stroke-width="12" stroke-linecap="round" />
+                      <ellipse cx="115" cy="65" rx="22" ry="40" fill="#f39c12" transform="rotate(20, 115, 65)" />
+                      <rect x="75" y="45" width="22" height="42" rx="6" fill="#8e44ad" transform="rotate(20, 75, 45)" />
+                      <path d="M 125 55 Q 155 45 180 40" fill="none" stroke="#d35400" stroke-width="14" stroke-linecap="round" />
+                      <ellipse cx="140" cy="30" rx="20" ry="22" fill="#1abc9c" transform="rotate(10, 140, 30)" />
+                      <path d="M 148 20 A 18 18 0 0 1 158 40 L 135 40 Z" fill="#34495e" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div id="leaves-container"></div>
+        <a href="#calculator" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
+    </header>
+
+    <main id="calculator" class="calculator-section">
+        <div class="bg-shape bg-teal"></div>
+        <div class="bg-shape bg-emerald"></div>
+        <div class="calc-container">
+            <div class="calc-header">
+                <h2>Carbon Emission Calculator</h2>
+                <p>Estimate your environmental footprint and discover ways to reduce your impact.</p>
+            </div>
+
+            <div class="calc-grid">
+                <!-- Vehicle -->
+                <div class="calc-card">
+                    <div class="card-icon"><i class="fa-solid fa-car-side"></i></div>
+                    <h3>Transportation</h3>
+                    <div class="input-group">
+                        <label for="miles">Miles Driven (per week)</label>
+                        <input type="number" id="miles" placeholder="e.g. 150" min="0" class="calc-input">
+                    </div>
+                    <div class="input-group">
+                        <label for="flights">Flights (per year)</label>
+                        <input type="number" id="flights" placeholder="e.g. 2" min="0" class="calc-input">
+                    </div>
+                </div>
+
+                <!-- Energy -->
+                <div class="calc-card">
+                    <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
+                    <h3>Home Energy</h3>
+                    <div class="input-group">
+                        <label for="electricity">Electricity (kWh/month)</label>
+                        <input type="number" id="electricity" placeholder="e.g. 300" min="0" class="calc-input">
+                    </div>
+                    <div class="input-group">
+                        <label for="gas">Natural Gas (therms/month)</label>
+                        <input type="number" id="gas" placeholder="e.g. 50" min="0" class="calc-input">
+                    </div>
+                </div>
+
+                <!-- Diet -->
+                <div class="calc-card">
+                    <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Diet & Lifestyle</h3>
+                    <div class="input-group">
+                        <label for="meat">Meat Meals (per week)</label>
+                        <input type="number" id="meat" placeholder="e.g. 5" min="0" class="calc-input">
+                    </div>
+                    <div class="input-group">
+                        <label for="recycling">Recycle Regularly?</label>
+                        <select id="recycling">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-actions">
+                <button id="calculate-btn" class="calc-btn">
+                    <i class="fa-solid fa-calculator"></i> Calculate Footprint
+                </button>
+            </div>
+
+            <div id="result-box" class="result-box">
+                <div class="result-content">
+                    <h3>Your Annual Carbon Footprint</h3>
+                    <div class="score"><span id="co2-result">0</span> <span>Tons CO₂e</span></div>
+                    <p id="co2-suggestion">Enter your details above to get your custom carbon footprint analysis.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="analytics" class="analytics-section">
+        <div class="bg-shape bg-purple"></div>
+        <div class="bg-shape bg-blue"></div>
+        <div class="calc-container">
+            <div class="calc-header">
+                <h2>Our Community Impact</h2>
+                <p>Join thousands of users who are actively reducing their carbon footprint.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-number" data-target="15420">0</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <div class="stat-number" data-target="850">0</div>
+                    <div class="stat-label">Tons CO₂e Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-tree"></i></div>
+                    <div class="stat-number" data-target="12500">0</div>
+                    <div class="stat-label">Trees Planted</div>
+                </div>
+            </div>
+
+            <div class="analytics-dashboard">
+                <div class="chart-container">
+                    <h3>Emissions by Category</h3>
+                    <div class="bar-chart">
+                        <div class="bar-group">
+                            <span class="bar-label">Transport</span>
+                            <div class="bar-track"><div class="bar-fill" style="--fill: 45%; background: var(--primary);"></div></div>
+                            <span class="bar-value">45%</span>
+                        </div>
+                        <div class="bar-group">
+                            <span class="bar-label">Energy</span>
+                            <div class="bar-track"><div class="bar-fill" style="--fill: 30%; background: #3B82F6;"></div></div>
+                            <span class="bar-value">30%</span>
+                        </div>
+                        <div class="bar-group">
+                            <span class="bar-label">Diet</span>
+                            <div class="bar-track"><div class="bar-fill" style="--fill: 15%; background: #F59E0B;"></div></div>
+                            <span class="bar-value">15%</span>
+                        </div>
+                        <div class="bar-group">
+                            <span class="bar-label">Other</span>
+                            <div class="bar-track"><div class="bar-fill" style="--fill: 10%; background: #8B5CF6;"></div></div>
+                            <span class="bar-value">10%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="insight-container">
+                    <h3>Monthly Insights</h3>
+                    <div class="insight-card">
+                        <div class="insight-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                        <div>
+                            <h4>12% Reduction</h4>
+                            <p>Average user reduced their footprint by 12% this month.</p>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon" style="color: #3B82F6; background: rgba(59, 130, 246, 0.1);"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4>Energy Efficient</h4>
+                            <p>30% of our community switched to renewable energy sources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Ecologix. Driving toward a sustainable future.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> badb4cd (first commit with fronted first page)
